@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="he">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>מערכת שידוכים</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-container">
+            <div class="logo">
+                <span class="logo-text">שידוכים</span>
+                <i class="fas fa-heart"></i>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#" class="active">הרשמה</a></li>
+                    <li><a href="#">אודות</a></li>
+                    <li><a href="#">צור קשר</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <form id="matchmakingForm">
+            <h1 class="page-title"><i class="fas fa-heart"></i> טופס הרשמה למערכת שידוכים</h1>
+            <div class="form-nav">
+                <div class="nav-dot active" data-step="0">1</div>
+                <div class="nav-dot" data-step="1">2</div>
+                <div class="nav-dot" data-step="2">3</div>
+                <div class="nav-dot" data-step="3">4</div>
+                <div class="nav-dot" data-step="4">5</div>
+                <div class="nav-dot" data-step="5">6</div>
+                <div class="nav-dot" data-step="6">7</div>
+            </div>
+
+            <!-- Personal Details Section -->
+            <div class="form-section active">
+                <h2><i class="fas fa-user"></i> פרטים אישיים</h2>
+                <div class="section-content">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="firstName" class="form-label">שם פרטי</label>
+                            <input type="text" id="firstName" name="firstName" class="form-input" placeholder="שם פרטי">
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName" class="form-label">שם משפחה</label>
+                            <input type="text" id="lastName" name="lastName" class="form-input" placeholder="שם משפחה">
+                        </div>
+                        <div class="form-group">
+                            <label for="fatherName" class="form-label">שם האב</label>
+                            <input type="text" id="fatherName" name="fatherName" class="form-input">
+                        </div>
+                        <div class="form-group">
+                            <label for="motherName" class="form-label">שם האם</label>
+                            <input type="text" id="motherName" name="motherName" class="form-input">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Birth Details Section -->
+            <div class="form-section">
+                <h2><i class="fas fa-calendar-alt"></i> תאריכי לידה</h2>
+                <div class="section-content">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="gregorianBirthdate" class="form-label">תאריך לידה לועזי</label>
+                            <input type="date" id="gregorianBirthdate" name="gregorianBirthdate" class="form-input">
+                        </div>
+                        <div class="form-group">
+                            <label for="hebrewDay" class="form-label">תאריך לידה עברי</label>
+                            <div class="date-inputs">
+                                <select id="hebrewDay" name="hebrewDay">
+                                    <option value="">יום</option>
+                                </select>
+                                <select id="hebrewMonth" name="hebrewMonth">
+                                    <option value="">חודש</option>
+                                    <option value="1">תשרי</option>
+                                    <option value="2">חשון</option>
+                                    <option value="3">כסלו</option>
+                                    <option value="4">טבת</option>
+                                    <option value="5">שבט</option>
+                                    <option value="6">אדר א</option>
+                                    <option value="7">אדר ב</option>
+                                    <option value="8">ניסן</option>
+                                    <option value="9">אייר</option>
+                                    <option value="10">סיון</option>
+                                    <option value="11">תמוז</option>
+                                    <option value="12">אב</option>
+                                    <option value="13">אלול</option>
+                                </select>
+                                <select id="hebrewYear" name="hebrewYear">
+                                    <option value="">שנה</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="age" class="form-label">גיל</label>
+                            <input type="number" 
+                                   id="age" 
+                                   name="age" 
+                                   required 
+                                   min="18" 
+                                   max="120" 
+                                   class="form-input">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Basic Information Section -->
+            <div class="form-section">
+                <h2><i class="fas fa-info-circle"></i> מידע בסיסי</h2>
+                <div class="section-content">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="gender" class="form-label">מגדר</label>
+                            <select id="gender" name="gender">
+                                <option value="">בחר/י</option>
+                                <option value="male">זכר</option>
+                                <option value="female">נקבה</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="ethnicity" class="form-label">עדה</label>
+                            <select id="ethnicity" name="ethnicity">
+                                <option value="">בחר/י</option>
+                                <option value="ashkenaz">אשכנזי/ה</option>
+                                <option value="sephard">ספרדי/ה</option>
+                                <option value="teimani">תימני/ה</option>
+                                <option value="mixed">מעורב</option>
+                                <option value="other">אחר</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Education & Occupation Section -->
+            <div class="form-section">
+                <h2><i class="fas fa-graduation-cap"></i> השכלה ותעסוקה</h2>
+                <div class="section-content">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="institution" class="form-label">ישיבה/סמינר</label>
+                            <input type="text" id="institution" name="institution" class="form-input">
+                        </div>
+                        <div class="form-group">
+                            <label for="currentStatus" class="form-label">מצב נוכחי</label>
+                            <select id="currentStatus" name="currentStatus">
+                                <option value="">בחר/י</option>
+                                <option value="learning">לומד/ת</option>
+                                <option value="working">עובד/ת</option>
+                                <option value="both">גם וגם</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="occupation" class="form-label">תחומי עיסוק/לימוד</label>
+                            <select id="occupation" name="occupation" onchange="toggleOtherOccupation()">
+                                <option value="">בחר/י תחום</option>
+                                <option value="torah">תורה</option>
+                                <option value="education">חינוך</option>
+                                <option value="tech">הייטק/תכנות</option>
+                                <option value="medicine">רפואה</option>
+                                <option value="law">משפטים</option>
+                                <option value="accounting">ראיית חשבון</option>
+                                <option value="marketing">שיווק ופרסום</option>
+                                <option value="design">עיצוב גרפי</option>
+                                <option value="engineering">הנדסה</option>
+                                <option value="sales">מכירות</option>
+                                <option value="realestate">נדל"ן</option>
+                                <option value="finance">פיננסים</option>
+                                <option value="architecture">אדריכלות</option>
+                                <option value="psychology">פסיכולוגיה</option>
+                                <option value="social">עבודה סוציאלית</option>
+                                <option value="business">מנהל עסקים</option>
+                                <option value="media">תקשורת</option>
+                                <option value="food">קולינריה</option>
+                                <option value="beauty">קוסמטיקה ויופי</option>
+                                <option value="other">אחר</option>
+                            </select>
+                        </div>
+                        <div class="form-group" id="otherOccupationGroup" style="display: none;">
+                            <label for="otherOccupation" class="form-label">פרט/י את תחום העיסוק</label>
+                            <input type="text" id="otherOccupation" name="otherOccupation" class="form-input">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Location & Housing Section -->
+            <div class="form-section">
+                <h2><i class="fas fa-home"></i> מגורים</h2>
+                <div class="section-content">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="city" class="form-label">עיר מגורים</label>
+                            <input type="text" id="city" name="city" class="form-input">
+                        </div>
+                        <div class="form-group">
+                            <label for="housingAssistance" class="form-label">האם יש עזרה לדירה?</label>
+                            <select id="housingAssistance" name="housingAssistance">
+                                <option value="">בחר/י</option>
+                                <option value="full">כן - דירה מלאה</option>
+                                <option value="partial">כן - חלקי</option>
+                                <option value="no">לא</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Preferences Section -->
+            <div class="form-section">
+                <h2><i class="fas fa-heart"></i> העדפות</h2>
+                <div class="section-content">
+                    <div class="form-group">
+                        <label for="minAge" class="form-label">טווח גילאים מבוקש</label>
+                        <div class="range-group">
+                            <input type="number" id="minAge" name="minAge" placeholder="מ-" min="18" max="120">
+                            <span>עד</span>
+                            <input type="number" id="maxAge" name="maxAge" placeholder="עד-" min="18" max="120">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="notes" class="form-label">הערות נוספות</label>
+                        <textarea id="notes" name="notes" rows="4" placeholder="ספר/י קצת על עצמך ועל מה שחשוב לך..."></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Photo Upload Section -->
+            <div class="form-section">
+                <h2><i class="fas fa-camera"></i> תמונת פרופיל</h2>
+                <div class="section-content">
+                    <div class="photo-upload" id="photoUploadArea">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                        <h3>העלאת תמונה</h3>
+                        <p>גרור לכאן תמונה או לחץ לבחירה</p>
+                        <input type="file" id="photo" accept="image/*" style="display: none;">
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-navigation">
+                <button type="button" class="prev-button" style="display: none;">הקודם</button>
+                <button type="button" class="next-button">הבא</button>
+                <button type="submit" id="submitBtn" class="submit-button" style="display: none;">שלח טופס</button>
+            </div>
+        </form>
+
+        <!-- Submit Popup -->
+        <div id="submitPopup" class="popup">
+            <div class="popup-content">
+                <!-- Loading State -->
+                <div id="loadingState" class="popup-state">
+                    <div class="spinner"></div>
+                    <h3>שולח את הטופס...</h3>
+                    <p>אנא המתן</p>
+                </div>
+                
+                <!-- Success State -->
+                <div id="successState" class="popup-state" style="display: none;">
+                    <div class="success-icon">✓</div>
+                    <h3>הטופס נשלח בהצלחה!</h3>
+                    <p>תודה על ההרשמה</p>
+                    <button onclick="closePopup('submitPopup')" class="popup-button">סגור</button>
+                </div>
+                
+                <!-- Error State -->
+                <div id="errorState" class="popup-state" style="display: none;">
+                    <div class="error-icon">✕</div>
+                    <h3>שגיאה בשליחת הטופס</h3>
+                    <p>אנא נסה שוב מאוחר יותר</p>
+                    <button onclick="closePopup('submitPopup')" class="popup-button">סגור</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Popup Messages -->
+    <div id="loadingPopup" class="popup">
+        <div class="popup-content loading">
+            <i class="fas fa-spinner fa-spin"></i>
+            <h3>שולח את הטופס...</h3>
+            <p>אנא המתן</p>
+        </div>
+    </div>
+
+    <div id="successPopup" class="popup">
+        <div class="popup-content success">
+            <i class="fas fa-check-circle"></i>
+            <h3>הטופס נשלח בהצלחה!</h3>
+            <p>תודה על ההרשמה למערכת השידוכים</p>
+            <button class="popup-button" onclick="closePopup('successPopup')">סגור</button>
+        </div>
+    </div>
+
+    <div id="errorPopup" class="popup">
+        <div class="popup-content error">
+            <i class="fas fa-times-circle"></i>
+            <h3>שגיאה בשליחת הטופס</h3>
+            <p>אנא נסה שוב מאוחר יותר</p>
+            <button class="popup-button" onclick="closePopup('errorPopup')">סגור</button>
+        </div>
+    </div>
+
+    <!-- Firebase Scripts -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-analytics.js"></script>
+    
+    <!-- Main Script -->
+    <script src="script.js"></script>
+    <iframe id="header" src="header.html" style="display: none;"></iframe>
+    <!-- Include Footer -->
+    <div id="footer-placeholder"></div>
+</body>
+</html>
